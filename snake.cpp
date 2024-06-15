@@ -162,6 +162,21 @@ void init()
     initGrid(COLUMNS, ROWS);
 }
 
+int main(int argc, char **argv)
+{
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
+    glutInitWindowSize(500, 500);
+    glutCreateWindow("SNAKE");
+    glutDisplayFunc(display_callback);
+    glutReshapeFunc(reshape_callback);
+    glutTimerFunc(0, time_callback, 0);
+    glutSpecialFunc(keyboard_callback);
+    init();
+    glutMainLoop();
+    return 0;
+}
+
 void display_callback()
 {
 
